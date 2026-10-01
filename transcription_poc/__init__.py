@@ -1,0 +1,1 @@
+"""Training video transcription PoC."""

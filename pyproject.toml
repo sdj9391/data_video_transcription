@@ -1,0 +1,20 @@
+# Build configuration used when installing or packaging this project.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+# Basic package metadata shown to Python package managers.
+[project]
+name = "training-transcription-poc"
+version = "0.1.0"
+description = "Transcribe videos in a training ZIP with local or Google Cloud speech recognition"
+requires-python = ">=3.9"
+
+# Install only the backend dependencies needed for your chosen mode.
+[project.optional-dependencies]
+local = ["faster-whisper>=1.0,<2"]
+google = ["google-cloud-speech>=2.20,<3", "google-cloud-storage>=2.0,<4"]
+
+# Tell setuptools which Python package directories to include.
+[tool.setuptools.packages.find]
+include = ["transcription_poc*"]
